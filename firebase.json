@@ -1,0 +1,8 @@
+{
+  "firebase": "vr2015",
+    "public": "dist",
+    "rewrites": [{
+      "source": "**",
+      "destination": "/index.html"
+    }]
+}

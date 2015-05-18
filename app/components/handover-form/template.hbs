@@ -1,0 +1,17 @@
+{{input value=item.name placeholder="Jméno předávky" class="form-control"}}
+{{textarea value=item.body placeholder="Popis" class="form-control" rows=10}}
+{{input value=item.image placeholder="Obrázek (URL)" class="form-control"}}
+{{input value=item.order placeholder="Pořadové číslo předávky" class="form-control"}}
+{{input value=item.duration placeholder="Čas běhu" class="form-control"}}
+{{input value=item.teamRank placeholder="Pořadí týmu" class="form-control"}}
+{{input value=item.teamLost placeholder="Ztráta týmu" class="form-control"}}
+{{input value=item.teamTime placeholder="Celkový čas týmu" class="form-control"}}
+
+<button {{action "confirm"}} class="btn btn-primary">
+  {{fa-icon 'pencil'}}
+  Uložit
+</button>
+
+{{#link-to 'handovers' class="btn btn-link"}}
+  Zpět
+{{/link-to}}

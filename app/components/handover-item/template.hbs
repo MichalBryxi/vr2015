@@ -1,0 +1,17 @@
+<div class="timeline-image">
+  <img class="img-circle img-responsive" {{bind-attr src=handover.image}} alt="">
+</div>
+<div class="timeline-panel">
+  <div class="timeline-heading">
+    <h4>{{handover.name}}</h4>
+    <h4 class="subheading">{{handover.duration}}</h4>
+  </div>
+  <div class="timeline-body">
+    <p class="text-muted">
+      {{markdown-to-html markdown=handover.body}}
+    </p>
+  </div>
+  {{#link-to 'handover.edit' handover class="btn btn-default"}}
+    {{fa-icon 'pencil'}}
+  {{/link-to}}
+</div>
