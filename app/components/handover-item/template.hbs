@@ -3,8 +3,14 @@
 </div>
 <div class="timeline-panel">
   <div class="timeline-heading">
-    <h4>{{handover.name}}</h4>
-    <h4 class="subheading">{{handover.duration}}</h4>
+    <h4>#{{handover.order}} {{handover.name}}</h4>
+    <h4 class="subheading">
+      {{fa-icon "clock-o"}} +{{handover.duration}}min = {{handover.teamTime}}min
+    </h4>
+    <small>
+      {{fa-icon "sort-amount-desc"}}
+      #{{handover.teamRank}} (+{{handover.teamLost}}min)
+    </small>
   </div>
   <div class="timeline-body">
     <p class="text-muted">
