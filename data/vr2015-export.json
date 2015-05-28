@@ -62,10 +62,13 @@
     "name" : "Černá v Pošumaví",
     "order" : 9
   }, {
+    "body" : "Prima předávka **na druhou**!\n\n> Míša jede lodí\n> Tou lodí výletní!",
     "date" : "16.5.2015 15:30:00",
-    "duration" : "73",
+    "duration" : 73,
+    "image" : "http://lazne.relaxos.cz/image/1/orig/33707.jpeg",
     "name" : "Frymburk",
-    "order" : "10"
+    "order" : 10,
+    "runner" : "-JqOPFtxB-pVbVUk1Vh9"
   }, {
     "date" : "16.5.2015 16:35:00",
     "duration" : "65",
@@ -201,5 +204,24 @@
     "duration" : "--",
     "name" : "Cíl",
     "order" : "Cíl"
-  } ]
+  } ],
+  "runners" : {
+    "-JqOPFtxB-pVbVUk1Vh9" : {
+      "avatar" : "http://placekitten.com/g/64/64",
+      "bio" : "Jsem super *běhna*.",
+      "facebook" : "https://www.facebook.com/michal.bryxi",
+      "first_name" : "Michal",
+      "last_name" : "Bryxí",
+      "mail" : "michal.bryxi@gmail.com",
+      "title" : "Běhna",
+      "twitter" : "https://twitter.com/MichalBryxi"
+    },
+    "-JqOmehHkd9m1t0Tm5Gl" : {
+      "avatar" : "http://img2.finalfantasyxiv.com/accimg/c8/11/c81165d2b200b979e4c0a0bd7aa828dbb5f35c6a.jpg",
+      "bio" : "Je to frajer!",
+      "first_name" : "Jiří",
+      "last_name" : "Fabšič",
+      "title" : "Kapitán"
+    }
+  }
 }
