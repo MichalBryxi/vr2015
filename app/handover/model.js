@@ -9,6 +9,8 @@ export default DS.Model.extend({
   teamLost: DS.attr('number'),
   teamTime: DS.attr('number'),
   order: DS.attr('number'),
+  length: DS.attr('number'),
+  difficulty: DS.attr('number'),
 
   runner: DS.belongsTo('runner', { async: true })
 });

@@ -20,6 +20,16 @@
   </div>
 
   <div class="form-group">
+    <label>Délka trasy [km]</label>
+    {{input value=h.length placeholder="10" class="form-control"}}
+  </div>
+
+  <div class="form-group">
+    <label>Náročnost [1 až 5]</label>
+    {{input value=h.difficulty placeholder="1" class="form-control"}}
+  </div>
+
+  <div class="form-group">
     <label>Čas běhu z této na další předávku [min]</label>
     {{input value=h.duration placeholder="42" class="form-control"}}
   </div>
