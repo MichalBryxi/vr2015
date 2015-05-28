@@ -1,2 +1,26 @@
+<section id="handovers" class="space-top">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading">Statistiky</h2>
+        <blockquote class="section-subheading text-muted">
+          <p>Nevěřím žádné statistice, kterou jsem sám nezfalšoval.</p>
+          <footer>
+            Toto neřekl
+            <a href="http://cs.wikiquote.org/wiki/Winston_Churchill">
+              <cite title="Wiki">
+                Winston Churchil
+              </cite>
+            </a>
+          </footer>
+        </blockquote>
+      </div>
+    </div>
 
-{{ember-chart type='Pie' data=model.chartData width=200 height=200}}
+    <div class="row">
+      <div class="col-lg-12">
+        {{ember-chart type='Bar' data=bar width=1200 height=200}}
+      </div>
+    </div>
+  </div>
+</section>
