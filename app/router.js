@@ -7,6 +7,8 @@ var Router = Ember.Router.extend(googlePageview, {
 });
 
 Router.map(function() {
+  this.route('handovers-grid');
+
   this.route('handovers', function () {
     this.route('new');
   });
@@ -14,9 +16,7 @@ Router.map(function() {
     this.route('edit');
   });
 
-  this.route('runners', function () {
-    this.route('new');
-  });
+  this.route('runners');
   this.route('runner', {path: '/runner/:id'}, function () {
     this.route('edit');
   });

@@ -70,10 +70,18 @@
     "order" : 10,
     "runner" : "-JqOPFtxB-pVbVUk1Vh9"
   }, {
+    "body" : "Míšovo příběh",
     "date" : "16.5.2015 16:35:00",
-    "duration" : "65",
+    "difficulty" : 3.5,
+    "duration" : 72,
+    "image" : "http://voztrans.cz/upload/lenka/St%C4%9Bhov%C3%A1n%C3%AD%20Lou%C4%8Dovice4.jpg",
+    "length" : 13.4,
     "name" : "Loučovice",
-    "order" : "11"
+    "order" : 11,
+    "runner" : "-JqOPFtxB-pVbVUk1Vh9",
+    "teamLost" : 6,
+    "teamRank" : 76,
+    "teamTime" : 633
   }, {
     "date" : "16.5.2015 17:48:00",
     "duration" : "72",

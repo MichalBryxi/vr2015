@@ -1,0 +1,42 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Start</th>
+      <th class="col-sm-2">Příběh</th>
+      <th>Obrázek</th>
+      <th>#</th>
+      <th>s [km]</th>
+      <th>Obtížnost</th>
+      <th>t [min]</th>
+      <th>Pořadí</th>
+      <th>Ztráta</th>
+      <th>&sum;t [min]</th>
+      <th class="col-sm-2">Běžec</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each attrs.handovers as |h|}}
+      <tr>
+        <td>{{input value=h.name class="form-control"}}</td>
+        <td>{{textarea value=h.body class="form-control" rows=1}}</td>
+        <td>{{input value=h.image class="form-control"}}</td>
+        <td>{{input value=h.order class="form-control"}}</td>
+        <td>{{input value=h.length class="form-control"}}</td>
+        <td>{{input value=h.difficulty class="form-control"}}</td>
+        <td>{{input value=h.duration class="form-control"}}</td>
+        <td>{{input value=h.teamRank class="form-control"}}</td>
+        <td>{{input value=h.teamLost class="form-control"}}</td>
+        <td>{{input value=h.teamTime class="form-control"}}</td>
+        <td>{{view "select" class="form-control" content=attrs.runners optionValuePath="content" optionLabelPath="content.fullName" selection=h.runner}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+    {{#link-to 'handovers' class="btn btn-link"}}
+      Zpět
+    {{/link-to}}
+
+    <button {{action "editHandover"}} class="btn btn-primary pull-right">
+      {{fa-icon 'floppy-o' spin=isSaving}}
+      Uložit
+    </button>
