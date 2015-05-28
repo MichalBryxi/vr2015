@@ -10,16 +10,21 @@ Router.map(function() {
   this.route('handovers', function () {
     this.route('new');
   });
-
   this.route('handover', function () {
     this.route('edit', {path: '/edit/:id'});
+  });
+
+  this.route('runners', function () {
+    this.route('new');
+  });
+  this.route('runner', {path: '/runner/:id'}, function () {
+    this.route('edit');
   });
 
   this.route('stats');
 
   this.route('layout/propositions', {path: 'propositions'});
   this.route('layout/photos', {path: 'photos'});
-  this.route('layout/team', {path: 'team'});
   this.route('layout/map', {path: 'map'});
 });
 

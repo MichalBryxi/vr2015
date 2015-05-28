@@ -8,5 +8,7 @@ export default DS.Model.extend({
   teamRank: DS.attr('number'),
   teamLost: DS.attr('number'),
   teamTime: DS.attr('number'),
-  order: DS.attr('number')
+  order: DS.attr('number'),
+
+  belongsTo: DS.attr('runner')
 });

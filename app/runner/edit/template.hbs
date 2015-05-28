@@ -1,0 +1,59 @@
+{{#with attrs.runner as |r|}}
+  <div class="form-group">
+    <label>Jméno</label>
+    {{input value=r.first_name placeholder="John" class="form-control"}}
+  </div>
+
+  <div class="form-group">
+    <label>Příjmení</label>
+    {{input value=r.last_name placeholder="Doe" class="form-control"}}
+  </div>
+
+  <div class="form-group">
+    <label>Příběh k běhu <small>(formátováno pomocí <a href="http://daringfireball.net/projects/markdown/syntax">markdown</a>)</small></label>
+    {{textarea value=item.body placeholder="Běželo se mi fajn." class="form-control" rows=10}}
+  </div>
+
+  <div class="form-group col-xs-6">
+    <label>Obrázek (odkaz)</label>
+    {{input value=item.image placeholder="http://placekitten.com/g/128/128" class="form-control"}}
+  </div>
+
+  <div class="col-xs-6">
+    <img {{bind-attr src=item.image}} class="img-thumbnail img-rounded img-responsive"/>
+  </div>
+
+  <div class="form-group">
+    <label>Pořadové číslo předávky</label>
+    {{input value=item.order placeholder="1" class="form-control"}}
+  </div>
+
+  <div class="form-group">
+    <label>Čas běhu z této na další předávku [min]</label>
+    {{input value=item.duration placeholder="42" class="form-control"}}
+  </div>
+
+  <div class="form-group">
+    <label>Pořadí týmu na další předávce</label>
+    {{input value=item.teamRank placeholder="81" class="form-control"}}
+  </div>
+
+  <div class="form-group">
+    <label>Ztráta týmu na další předávce [min]</label>
+    {{input value=item.teamLost placeholder="470" class="form-control"}}
+  </div>
+
+  <div class="form-group">
+    <label>Celkový čas týmu na další předávce [min]</label>
+    {{input value=item.teamTime placeholder="1905" class="form-control"}}
+  </div>
+
+  <button {{action "confirm"}} class="btn btn-primary">
+    {{fa-icon 'pencil'}}
+    Uložit
+  </button>
+
+  {{#link-to 'handovers' class="btn btn-link"}}
+    Zpět
+  {{/link-to}}
+{{/with}}

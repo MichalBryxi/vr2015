@@ -1,0 +1,32 @@
+<section class="space-top">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        {{#with attrs.runner as |r|}}
+          <h2>{{r.first_name}} {{r.last_name}}</h2>
+          <h3 class="text-muted">{{r.title}}</h3>
+
+          <p>
+            {{r.bio}}
+          </p>
+
+          <ul class="list-inline social-buttons">
+            {{#if r.twitter}}
+              <li><a {{bind-attr href=r.twitter}}><i class="fa fa-twitter"></i></a></li>
+            {{/if}}
+            {{#if r.facebook}}
+              <li><a {{bind-attr href=r.facebook}}><i class="fa fa-facebook"></i></a></li>
+            {{/if}}
+            {{#if r.mail}}
+              <li><a {{bind-attr href=r.mail}}><i class="fa fa-envelope"></i></a></li>
+            {{/if}}
+          </ul>
+        {{/with}}
+      </div>
+
+      <div class="col-lg-6">
+        {{liquid-outlet}}
+      </div>
+    </div>
+  </div>
+</section>
