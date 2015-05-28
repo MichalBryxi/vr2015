@@ -4,13 +4,13 @@ module.exports = function(environment) {
   var ENV = {
     contentSecurityPolicy: {
       'default-src': "'none'",
-      'script-src': "'self' 'unsafe-inline' 'unsafe-eval' use.typekit.net connect.facebook.net maps.googleapis.com maps.gstatic.com",
+      'script-src': "'self' 'unsafe-inline' 'unsafe-eval' use.typekit.net connect.facebook.net maps.googleapis.com maps.gstatic.com https://*.firebaseio.com",
       'font-src': "'self' data: use.typekit.net fonts.gstatic.com fonts.googleapis.com",
-      'connect-src': "'self'",
+      'connect-src': "'self' wss://*.firebaseio.com",
       'img-src': "'self' www.facebook.com p.typekit.net",
       'report-uri': "'self'",
       'style-src': "'self' 'unsafe-inline' use.typekit.net fonts.googleapis.com",
-      'frame-src': "s-static.ak.facebook.com static.ak.facebook.com www.facebook.com umap.openstreetmap.fr"
+      'frame-src': "s-static.ak.facebook.com static.ak.facebook.com www.facebook.com umap.openstreetmap.fr https://*.firebaseio.com",
     },
     modulePrefix: 'vr2015',
     environment: environment,
