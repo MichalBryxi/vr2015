@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  attrs: {},
+
   foo: {
     labels: ["January", "February", "March", "April", "May", "June", "July"],
     datasets: [
@@ -24,21 +26,35 @@ export default Ember.Controller.extend({
   },
 
   bar: function () {
-    var data = this.get('model').map(function(item) {
+    var data = this.get('attrs.handovers').map(function(item) {
       return item.get('duration');
+    });
+    var teamRank = this.get('attrs.handovers').map(function(item) {
+      return item.get('teamRank') || 81;
     });
 
     return {labels: this.get('handoverNames'),
     datasets: [
-      {label: 'foo', data: data}
+      {label: 'Časy přeběhů', data: data},
+      // {label: 'teamRank', data: teamRank,
+
+      //       fillColor: "rgba(151,187,205,0.5)",
+      //       strokeColor: "rgba(151,187,205,0.8)",
+      //       highlightFill: "rgba(151,187,205,0.75)",
+      //       highlightStroke: "rgba(151,187,205,1)",
+    // }
     ]};
   }.property('model'),
 
   handoverNames: function () {
-    return this.get('handovers').map(function (item) {
-      return item.get('name');
+    return this.get('attrs.handovers').map(function (item) {
+      if(item.get('runner')) {
+        return item.get('name') + " - " + item.get('runner').get('initials');
+      } else {
+        return item.get('name');
+      }
     });
-  }.property('handovers'),
+  }.property('handovers.@each'),
 
   handovers: Ember.computed.alias('model')
 });

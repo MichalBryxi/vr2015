@@ -14,5 +14,9 @@ export default DS.Model.extend({
 
   fullName: function () {
     return this.get('first_name') + ' ' + this.get('last_name');
+  }.property('first_name', 'last_name'),
+
+  initials: function () {
+    return (this.get('first_name').charAt(0) + this.get('last_name').charAt(0)).toUpperCase();
   }.property('first_name', 'last_name')
 });
