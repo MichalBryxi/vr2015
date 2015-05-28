@@ -8,6 +8,11 @@ export default DS.Model.extend({
   twitter: DS.attr('string'),
   facebook: DS.attr('string'),
   mail: DS.attr('string'),
+  avatar: DS.attr('string'),
 
-  // hasMany: DS.attr('handover')
+  handover: DS.hasMany('handover', { async: true }),
+
+  fullName: function () {
+    return this.get('first_name') + ' ' + this.get('last_name');
+  }.property('first_name', 'last_name')
 });

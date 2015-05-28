@@ -10,5 +10,5 @@ export default DS.Model.extend({
   teamTime: DS.attr('number'),
   order: DS.attr('number'),
 
-  belongsTo: DS.attr('runner')
+  runner: DS.belongsTo('runner', { async: true })
 });

@@ -2,15 +2,15 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   attrs: {},
-  saving: false,
+  isSaving: false,
 
   actions: {
     editHandover: function() {
-      var that = this;
-      this.set('saving', true);
+      var self = this;
+      this.set('isSaving', true);
 
-      this.get('attrs.item').save().then(function () {
-        that.set('saving', false);
+      this.get('attrs.handover').save().then(function () {
+        self.set('isSaving', false);
       });
     }
   }

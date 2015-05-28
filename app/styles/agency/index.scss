@@ -7,6 +7,10 @@
   color: $brand-primary;
 }
 
+.btn-primary .fa {
+  color: #fff;
+}
+
 body {
   overflow-x: hidden;
   @include body-font;
@@ -607,6 +611,7 @@ ul.social-buttons {
   margin-bottom: 0;
   li {
     a {
+      text-align: center;
       display: block;
       background-color: $gray-darkest;
       height: 40px;
@@ -740,10 +745,9 @@ body {
   text-decoration: underline;
 }
 
-.main {
-  margin-top: 7em;
-  min-height: 75vh;
-}
+// .main {
+//   min-height: 75vh;
+// }
 
 .space-top {
   padding-top: 2em;
@@ -751,4 +755,11 @@ body {
 
 .timeline-image img {
   height: 100%;
+}
+
+.avatar {
+  height: 5em;
+  width: 5em;
+  float: left;
+  margin: 0 2em 2em 0;
 }

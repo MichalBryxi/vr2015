@@ -17,7 +17,10 @@
       {{markdown-to-html markdown=handover.body}}
     </p>
   </div>
-  {{#link-to 'handover.edit' handover class="btn btn-default"}}
+
+{{#if showEdit}}
+  {{#link-to 'handover.edit' handover.id class="btn btn-default"}}
     {{fa-icon 'pencil'}}
   {{/link-to}}
+{{/if}}
 </div>

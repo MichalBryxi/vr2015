@@ -1,0 +1,28 @@
+<h2>{{runner.first_name}} {{runner.last_name}}</h2>
+<h3 class="text-muted">{{runner.title}}</h3>
+
+<p>
+  {{#if runner.avatar}}
+  <img {{bind-attr src=runner.avatar}} class="img-responsive img-circle img-thumbnail avatar" />
+  {{/if}}
+
+  {{runner.bio}}
+</p>
+
+<ul class="list-inline social-buttons">
+  {{#if runner.twitter}}
+    <li><a {{bind-attr href=runner.twitter}}><i class="fa fa-twitter"></i></a></li>
+  {{/if}}
+  {{#if runner.facebook}}
+    <li><a {{bind-attr href=runner.facebook}}><i class="fa fa-facebook"></i></a></li>
+  {{/if}}
+  {{#if runner.mail}}
+    <li><a {{bind-attr href=runner.mail}}><i class="fa fa-envelope"></i></a></li>
+  {{/if}}
+</ul>
+
+{{#if showEdit}}
+  {{#link-to 'runner.edit' runner class="btn btn-default"}}
+    {{fa-icon "pencil"}}
+  {{/link-to}}
+{{/if}}

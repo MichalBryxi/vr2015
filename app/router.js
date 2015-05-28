@@ -10,8 +10,8 @@ Router.map(function() {
   this.route('handovers', function () {
     this.route('new');
   });
-  this.route('handover', function () {
-    this.route('edit', {path: '/edit/:id'});
+  this.route('handover', {path: '/handover/:id'}, function () {
+    this.route('edit');
   });
 
   this.route('runners', function () {

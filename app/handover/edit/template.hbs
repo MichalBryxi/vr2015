@@ -1,11 +1,61 @@
-<section class="space-top">
-  <div class="row">
-    <div class="col-lg-4 col-lg-push-4">
-      {{#liquid-if saving}}
-        {{fa-icon "refresh" spin=saving}}
-      {{/liquid-if}}
-
-      {{handover-form item=attrs.item action="editHandover"}}
-    </div>
+{{#with attrs.handover as |h|}}
+  <div class="form-group">
+    <label>Jméno předávky</label>
+    {{input value=h.name placeholder="Kvilda" class="form-control"}}
   </div>
-</section>
+
+  <div class="form-group">
+    <label>Příběh k běhu <small>(formátováno pomocí <a href="http://daringfireball.net/projects/markdown/syntax">markdown</a>)</small></label>
+    {{textarea value=h.body placeholder="Běželo se mi fajn." class="form-control" rows=10}}
+  </div>
+
+  <div class="form-group">
+    <label>Obrázek (odkaz)</label>
+    {{input value=h.image placeholder="http://placekitten.com/g/128/128" class="form-control"}}
+  </div>
+
+  <div class="form-group">
+    <label>Pořadové číslo předávky</label>
+    {{input value=h.order placeholder="1" class="form-control"}}
+  </div>
+
+  <div class="form-group">
+    <label>Čas běhu z této na další předávku [min]</label>
+    {{input value=h.duration placeholder="42" class="form-control"}}
+  </div>
+
+  <div class="form-group">
+    <label>Pořadí týmu na další předávce</label>
+    {{input value=h.teamRank placeholder="81" class="form-control"}}
+  </div>
+
+  <div class="form-group">
+    <label>Ztráta týmu na další předávce [min]</label>
+    {{input value=h.teamLost placeholder="470" class="form-control"}}
+  </div>
+
+  <div class="form-group">
+    <label>Celkový čas týmu na další předávce [min]</label>
+    {{input value=h.teamTime placeholder="1905" class="form-control"}}
+  </div>
+
+  <div class="form-group">
+  {{log runners}}
+    <label>Běžec</label>
+    {{view "select"
+      class="form-control"
+      content=attrs.runners
+      optionValuePath="content"
+      optionLabelPath="content.fullName"
+      selection=h.runner}}
+  </div>
+
+  {{#link-to 'handovers' class="btn btn-link"}}
+    Zpět
+  {{/link-to}}
+
+  <button {{action "editHandover"}} class="btn btn-primary pull-right">
+    {{fa-icon 'floppy-o' spin=isSaving}}
+    Uložit
+  </button>
+{{/with}}
