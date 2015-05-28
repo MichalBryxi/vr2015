@@ -46,6 +46,31 @@ export default Ember.Controller.extend({
     ]};
   }.property('model'),
 
+  lengthGraph: function () {
+    return {
+      labels: this.get('handoverNames'),
+      datasets: [
+        {
+          label: 'Délky tras', data: this.get('lengths')
+        }
+      ]
+    };
+  }.property('lengths', 'handoverNames'),
+
+  difficultyGraph: function () {
+    return {
+      labels: this.get('handoverNames'),
+      datasets: [
+        {
+          label: 'Náročnosti tras', data: this.get('difficulties')
+        }
+      ]
+    };
+  }.property('lengths', 'handoverNames'),
+
+
+  ////////////////////////////////////////////////////////////////////////////////
+
   handoverNames: function () {
     return this.get('attrs.handovers').map(function (item) {
       if(item.get('runner')) {
@@ -53,6 +78,18 @@ export default Ember.Controller.extend({
       } else {
         return item.get('name');
       }
+    });
+  }.property('handovers.@each'),
+
+  lengths: function () {
+    return this.get('attrs.handovers').map(function (item) {
+      return item.get('length') || 0;
+    });
+  }.property('handovers.@each'),
+
+  difficulties: function () {
+    return this.get('attrs.handovers').map(function (item) {
+      return item.get('difficulty') || 0;
     });
   }.property('handovers.@each'),
 
