@@ -21,7 +21,9 @@ Router.map(function() {
     this.route('edit');
   });
 
-  this.route('stats');
+  this.route('stats', function () {
+    this.route('runner', {path: '/runner/:id'});
+  });
 
   this.route('layout/propositions', {path: 'propositions'});
   this.route('layout/photos', {path: 'photos'});

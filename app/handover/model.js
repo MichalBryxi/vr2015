@@ -12,5 +12,9 @@ export default DS.Model.extend({
   length: DS.attr('number'),
   difficulty: DS.attr('number'),
 
-  runner: DS.belongsTo('runner', { async: true })
+  runner: DS.belongsTo('runner', { async: true }),
+
+  pace: function () {
+    return this.get('duration') / this.get('length');
+  }.property('duration', 'length')
 });
