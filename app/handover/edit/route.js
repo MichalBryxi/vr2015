@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model: function(params) {
+  model: function () {
     return Ember.RSVP.hash({
       handover: this.store.find('handover', this.paramsFor('handover').id),
       runners: this.store.find('runner')

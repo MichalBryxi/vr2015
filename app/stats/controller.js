@@ -29,9 +29,9 @@ export default Ember.Controller.extend({
     var data = this.get('attrs.handovers').map(function(item) {
       return item.get('duration');
     });
-    var teamRank = this.get('attrs.handovers').map(function(item) {
-      return item.get('teamRank') || 81;
-    });
+    // var teamRank = this.get('attrs.handovers').map(function(item) {
+    //   return item.get('teamRank') || 81;
+    // });
 
     return {labels: this.get('handoverNames'),
     datasets: [
