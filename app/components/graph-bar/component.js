@@ -4,9 +4,13 @@ export default Ember.Component.extend({
   tagName: '',
 
   handoverNames: function () {
+    var initials;
+
     return this.get('filteredHandovers').map(function (item) {
-      if(item.get('runner')) {
-        return item.get('name') + " - " + item.get('runner').get('initials');
+      initials = item.get('runner').get('initials');
+
+      if(initials) {
+        return item.get('name') + " - " + initials;
       } else {
         return item.get('name');
       }
@@ -17,7 +21,7 @@ export default Ember.Component.extend({
     var runner = this.get('selectedRunner'),
         handovers = this.get('handovers');
 
-    if (runner === null) {
+    if (runner === null || runner === 'all') {
       return handovers;
     } else {
       return handovers.filterBy('runner.id', runner);
@@ -33,13 +37,12 @@ export default Ember.Component.extend({
   }.property('filteredHandovers', 'key'),
 
   graph: function () {
-    console.log(this.get('handoverNames'));
-    console.log(this.get('data'));
     return {
       labels: this.get('handoverNames'),
       datasets: [{
         fillColor: "rgba(62, 190, 232, 0.53)",
         strokeColor: "#2EAED8",
+        scaleBeginAtZero: false,
         label: this.get('label'),
         data: this.get('data')
       }]

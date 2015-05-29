@@ -22,6 +22,10 @@
     <div class="row">
       <div class="col-xs-12">
         <ul class="nav nav-tabs">
+          {{#link-to 'stats.runner' 'all' tagName='li'}}
+            <a>Všichni</a>
+          {{/link-to}}
+
           {{#each attrs.runners as |runner|}}
             {{#link-to 'stats.runner' runner.id tagName='li'}}
               <a>{{runner.fullName}}</a>
