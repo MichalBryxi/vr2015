@@ -33,8 +33,6 @@ export default Ember.Component.extend({
   }.property('filteredHandovers', 'key'),
 
   graph: function () {
-    console.log(this.get('handoverNames'));
-    console.log(this.get('data'));
     return {
       labels: this.get('handoverNames'),
       datasets: [{
@@ -45,4 +43,16 @@ export default Ember.Component.extend({
       }]
     };
   }.property('handoverNames', 'label', 'data'),
+
+  chartist: function () {
+    var data = {
+      chartData: {
+        labels: this.get('handoverNames'),
+        series: [
+          this.get('data')
+        ]
+      }
+    };
+    return data;
+  }.property('handoverNames', 'label', 'data')
 });
