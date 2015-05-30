@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   tagName: '',
+  type: 'Bar',
 
   handoverNames: function () {
     var initials;
@@ -42,7 +43,7 @@ export default Ember.Component.extend({
       datasets: [{
         fillColor: "rgba(62, 190, 232, 0.53)",
         strokeColor: "#2EAED8",
-        scaleBeginAtZero: false,
+        // scaleBeginAtZero: false,
         label: this.get('label'),
         data: this.get('data')
       }]

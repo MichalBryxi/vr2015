@@ -1,6 +1,9 @@
   <div class="container">
-    {{graph-bar handovers=attrs.handovers selectedRunner=selectedRunner label="Délka trasy [km]" key='length'}}
-    {{graph-bar handovers=attrs.handovers selectedRunner=selectedRunner label="Náročnost [1 až 5]" key='difficulty'}}
-    {{graph-bar handovers=attrs.handovers selectedRunner=selectedRunner label="Doba běhu [min]" key='duration'}}
-    {{graph-bar handovers=attrs.handovers selectedRunner=selectedRunner label="Tempo [min/km]" key='pace'}}
+    {{graph-bar handovers=handoversSorted selectedRunner=selectedRunner label="Délka trasy [km]" key="length"}}
+    {{graph-bar handovers=handoversSorted selectedRunner=selectedRunner label="Náročnost [1 až 5]" key="difficulty"}}
+    {{graph-bar handovers=handoversSorted selectedRunner=selectedRunner label="Doba běhu [min]" key="duration"}}
+    {{graph-bar handovers=handoversSorted selectedRunner=selectedRunner label="Tempo [min/km]" key="pace"}}
+    {{graph-bar handovers=handoversSorted selectedRunner=selectedRunner label="Pořadí týmu" key="teamRank"}}
+    {{graph-bar handovers=handoversSorted selectedRunner=selectedRunner label="Ztráta na prvního [min]" key="teamLost"}}
+    {{graph-bar handovers=handoversSorted selectedRunner=selectedRunner label="Doba běhu celkem [min]" key="teamTime" type="Line"}}
   </div>
