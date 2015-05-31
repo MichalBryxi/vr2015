@@ -435,7 +435,7 @@ section {
       left: 0;
     }
       > li {
-        margin-bottom: 100px;
+        margin-bottom: 10px;
           min-height: 100px;
       .timeline-panel {
               width: 90%;
@@ -767,4 +767,14 @@ body {
 
 .intro-lead-in, .intro-heading {
   text-shadow: 2px 2px 5px #000;
+}
+
+.timeline-panel {
+  &:hover .handover-edit {
+    opacity: 1;
+  }
+  .handover-edit {
+    opacity: .1;
+    float: right;
+  }
 }
