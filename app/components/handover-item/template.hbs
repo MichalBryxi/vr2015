@@ -1,5 +1,9 @@
 <div class="timeline-image">
-  <img class="img-circle img-responsive" {{bind-attr src=handover.image}} alt="">
+  <img class="img-circle img-responsive" {{bind-attr src=handover.image}} alt="" />
+
+  {{#if handover.runner.avatar}}
+    <img class="img-circle img-thumbnail avatar" {{bind-attr src=handover.runner.avatar}} alt="" />
+  {{/if}}
 </div>
 <div class="timeline-panel">
   <div class="timeline-heading">
