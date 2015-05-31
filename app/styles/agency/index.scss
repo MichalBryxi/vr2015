@@ -3,14 +3,6 @@
 
 // Global Components
 
-.fa {
-  color: $brand-primary;
-}
-
-.btn-primary .fa {
-  color: #fff;
-}
-
 body {
   overflow-x: hidden;
   @include body-font;
@@ -778,3 +770,14 @@ body {
     float: right;
   }
 }
+
+.fa {
+  color: $brand-primary;
+}
+
+.btn-primary, .btn-danger {
+  .fa {
+    color: #fff;
+  }
+}
+
