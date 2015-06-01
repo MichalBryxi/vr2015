@@ -94,6 +94,7 @@
     "length" : 13.7,
     "name" : "Černá v Pošumaví",
     "order" : 9,
+    "runner" : "-JqiAzuoTRshzEqBg_5-",
     "teamLost" : 10,
     "teamRank" : 74,
     "teamTime" : 436
@@ -394,10 +395,18 @@
     },
     "-JqOmehHkd9m1t0Tm5Gl" : {
       "avatar" : "http://img2.finalfantasyxiv.com/accimg/c8/11/c81165d2b200b979e4c0a0bd7aa828dbb5f35c6a.jpg",
-      "bio" : "Je to frajer!",
+      "bio" : "Je to frajer! 111",
       "first_name" : "Jiří",
+      "handover" : {
+        "9" : true
+      },
       "last_name" : "Fabšič",
       "title" : "Kapitán"
+    },
+    "-JqiAzuoTRshzEqBg_5-" : {
+      "bio" : "Je to frajer.",
+      "first_name" : "Petr",
+      "last_name" : "Landsman"
     }
   }
 }
