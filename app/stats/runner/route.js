@@ -17,12 +17,4 @@ export default Ember.Route.extend({
     controller.set('selectedRunner', model.selectedRunner);
     this.set('counter', this.get('counter') + 1);
   },
-
-  actions: {
-    didTransition: function() {
-      if (this.get('counter') > 1) {
-        window.location.reload();
-      }
-    }
-  }
 });
